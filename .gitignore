@@ -1,0 +1,7 @@
+logs
+.idea
+node_modules
+.env
+**/src/**/*.map
+**/src/**/*.map.js
+**/src/**/*.js

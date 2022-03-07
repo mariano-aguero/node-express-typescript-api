@@ -1,5 +1,6 @@
 import morgan, { StreamOptions } from 'morgan'
 
+import { NODE_ENV } from '../config/constants'
 import Logger from '../config/logger'
 
 // Override the stream method by telling
@@ -15,8 +16,7 @@ const stream: StreamOptions = {
 // we already told to the logger that it should print
 // only warning and error messages in production.
 const skip = () => {
-  const env = process.env.NODE_ENV || 'development'
-  return env !== 'development'
+  return NODE_ENV !== 'development'
 }
 
 // Build the morgan middleware

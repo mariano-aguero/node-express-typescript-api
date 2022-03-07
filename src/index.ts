@@ -6,9 +6,9 @@ dotenv.config({ path: __dirname + '/../.env' })
 
 import morgan from './middlewares/morgan'
 import router from './routes'
+import { PORT } from './config/constants'
 
 const app: Application = express()
-const port = process.env.PORT || 8000 // default port to listen
 
 app.use(Helmet())
 app.use(express.json())
@@ -28,8 +28,8 @@ const errorHandler: ErrorRequestHandler = (err, req, res, next) => {
 }
 app.use(errorHandler)
 
-app.listen(port, () => {
-  console.log(`The application is listening on port ${port}!`)
+app.listen(PORT, () => {
+  console.log(`The application is listening on port ${PORT}!`)
 })
 
 export default app

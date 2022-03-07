@@ -1,5 +1,7 @@
 import winston from 'winston'
 
+import { NODE_ENV } from './constants'
+
 // Define your severity levels.
 // With them, You can create log files,
 // see or hide levels based on the running ENV.
@@ -16,8 +18,7 @@ const levels = {
 // if the server was run in development mode; otherwise,
 // if it was run in production, show only warn and error messages.
 const level = () => {
-  const env = process.env.NODE_ENV || 'development'
-  const isDevelopment = env === 'development'
+  const isDevelopment = NODE_ENV === 'development'
   return isDevelopment ? 'debug' : 'warn'
 }
 

@@ -2,7 +2,7 @@ import BeeQueue from 'bee-queue'
 
 import { QUEUE_NAME, REDIS_DB_HOST, REDIS_DB_PORT, REDIS_DB_PASSWORD } from './constants'
 
-let options: BeeQueue.QueueSettings = {
+const options: BeeQueue.QueueSettings = {
   isWorker: true,
   sendEvents: false,
   redis: {
